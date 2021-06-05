@@ -5,6 +5,7 @@ from flask_script import Manager
 
 from foodSystem import app, db, models
 
+manager = Manager(app)
 
 @manager.command
 def create_db():

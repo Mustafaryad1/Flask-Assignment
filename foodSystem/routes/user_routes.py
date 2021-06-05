@@ -5,7 +5,7 @@ from flask import request, make_response, jsonify
 from foodSystem import app, db
 from foodSystem.models import User, Auth, Restaurant, Food, Menu, Order, OrderItem,Logins
 
-@app.route('/')
+@app.route('/home')
 def home():
     return {
         "Hello":"World"

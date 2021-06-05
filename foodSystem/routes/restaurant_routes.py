@@ -36,7 +36,7 @@ def get_orders():
     return make_response(jsonify(response))
 
 
-@app.route('/api/resturant/order/<order_id>/update', menthod=["PUT"])
+@app.route('/api/resturant/order/<order_id>/update', methods=["PUT"])
 @is_authenticated
 @is_restaurant
 def update_order_status(order_id):
