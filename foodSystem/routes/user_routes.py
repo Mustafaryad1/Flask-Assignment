@@ -6,10 +6,9 @@ from foodSystem import app, db
 from foodSystem.models import User, Auth, Restaurant, Food, Menu, Order, OrderItem,Logins
 
 @app.route('/home')
+@app.route('/')
 def home():
-    return {
-        "Hello":"World"
-    }
+    return "<h1>Welcome FoodSystem App </h1>"
 
 
 
@@ -94,6 +93,7 @@ def login():
             ).first()
             if user and user.auth.check_password(
                 user.auth.hashed_password, post_data.get('password')):
+                
                 auth_token = user.encode_auth_token(user.id)
 
                 if auth_token:
